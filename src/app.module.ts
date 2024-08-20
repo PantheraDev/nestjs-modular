@@ -11,7 +11,6 @@ import { ProductsModule } from './products/products.module';
 import { DatabaseModule } from './database/database.module';
 import { enviroments } from './enviroments';
 import config from './config';
-import { APP_PIPE } from '@nestjs/core';
 
 @Module({
   imports: [
@@ -27,7 +26,9 @@ import { APP_PIPE } from '@nestjs/core';
         API_KEY: Joi.number().required(),
         DATABASE_NAME: Joi.string().required(),
         DATABASE_PORT: Joi.number().required(),
+        PORT: Joi.number().required(),
       }),
+
     }),
   ],
   controllers: [AppController],
